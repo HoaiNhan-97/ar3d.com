@@ -6,8 +6,16 @@ let data =[
         position:"-1 0 0",
         rotation:"-90 0 0"
 
+    },
+    {
+        pattern: "pattern/pattern-Adidas.patt",
+        src:"images/Adidas.png",
+        position:"-1 0 0",
+        rotation:"-90 0 0"
+
     }
 ]
+
 AFRAME.registerComponent('markers_start',{
 	init:function(){
 		console.log('Add markers to the scene------------');
