@@ -14,6 +14,16 @@ let data =[
         rotation:"-90 0 0"
 
     }
+	,
+    {
+        pattern: "pattern/pattern-ThankYou-In-MAM.patt",
+        src:"images/ThankYou-Out-MAM.png",
+        position:"-1 0 0",
+        rotation:"-90 0 0"
+
+    }
+
+	
 ]
 
 AFRAME.registerComponent('markers_start',{
