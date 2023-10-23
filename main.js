@@ -1,39 +1,61 @@
 let $ = document.querySelector.bind(document);
 let data =[
     {
-        pattern: "./pattern/pattern-product_2.patt",
-        src:"./images/test.gif",
+        pattern: "pattern/pattern-product_4 (2).patt",
+        src:"images/test.gif",
         position:"-1 0 0",
         rotation:"-90 0 0"
 
-    },
-    {
-        pattern: "./pattern/pattern-Test QR-Code.patt",
-        src:"./images/tam.jpg",
-        position:"-1 0 0",
-        rotation:"-90 0 0"
     }
-
 ]
-window.addEventListener("DOMContentLoaded",()=>{
+AFRAME.registerComponent('markers_start',{
+	init:function(){
+		console.log('Add markers to the scene');
 
-    AFRAME.registerComponent('markers_start',{
-        init:function(){
-            let ascene = $("a-scene")
-            console.log(ascene)
-            let contentHtml = "";
-            data.forEach(e => {
-                contentHtml += `
-                <a-marker type='pattern' url='${e.pattern}'>
-                <a-image src="${e.src}" position="${e.position}" rotation="${e.rotation}" scale="" visible="" material="" geometry=""></a-image>
-                
-                </a-marker>
-                
-                `
-            })
-            ascene.innerHTML = "<a-entity camera></a-entity>"+ contentHtml;
-        }
-    })
-   
-})
+		var sceneEl = document.querySelector('a-scene');
+		data.map((e,index) => {
+            var markerEl = document.createElement('a-marker');
+			markerEl.setAttribute('type','pattern');
+			markerEl.setAttribute('url',e.pattern);
+			markerEl.setAttribute('id',"maker_"+index);
+            markerEl.setAttribute('registerevents','');
+			sceneEl.appendChild(markerEl);
+            var imgEl = document.createElement('a-image');
+			
+			imgEl.setAttribute('src',e.src);
+			imgEl.object3D.position.set(-1, 0, 0);
+			imgEl.object3D.rotation.set(-90, 0, 0);
+
+			markerEl.appendChild(imgEl);
+            // var textEl = document.createElement('a-entity');
+			
+			// textEl.setAttribute('id','text');
+			// textEl.setAttribute('text',{color: 'red', align: 'center', value:"maker_" + index, width: '5.5'});
+			// textEl.object3D.position.set(0, 0.7, 0);
+			// textEl.object3D.rotation.set(-90, 0, 0);
+
+			// markerEl.appendChild(textEl);
+        })
+		
+	}
+});
+
+
+//Detect marker found and lost
+AFRAME.registerComponent('registerevents', {
+		init: function () {
+			const marker = this.el;
+
+			marker.addEventListener("markerFound", ()=> {
+				var markerId = marker.id;
+				console.log('Marker Found: ', markerId);
+			});
+
+			marker.addEventListener("markerLost",() =>{
+				var markerId = marker.id;
+				console.log('Marker Lost: ', markerId);
+			});
+		},
+	});
+
 {/* <a-image src="${e.src}" position="${e.position}" rotation="${e.rotation}"></a-image> */}
