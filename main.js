@@ -10,7 +10,7 @@ let data =[
 ]
 AFRAME.registerComponent('markers_start',{
 	init:function(){
-		console.log('Add markers to the scene');
+		console.log('Add markers to the scene------------');
 
 		var sceneEl = document.querySelector('a-scene');
 		data.map((e,index) => {
