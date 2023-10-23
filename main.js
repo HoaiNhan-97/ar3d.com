@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     AFRAME.registerComponent('markers_start',{
         init:function(){
             let ascene = $("a-scene")
+            console.log(ascene)
             let contentHtml = "";
             data.forEach(e => {
                 contentHtml += `
