@@ -41,8 +41,8 @@ AFRAME.registerComponent('markers_start',{
             var imgEl = document.createElement('a-image');
 			
 			imgEl.setAttribute('src',e.src);
-			// imgEl.setAttribute('width',4);
-			// imgEl.setAttribute('height',8);
+			imgEl.setAttribute('width',6);
+			imgEl.setAttribute('height',6);
 			imgEl.object3D.position.set(0, 0, 0);
 			imgEl.object3D.rotation.set(-90, 0, 0);
 
