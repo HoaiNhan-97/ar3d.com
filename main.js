@@ -17,7 +17,7 @@ let data =[
 	,
     {
         pattern: "pattern/pattern-ThankYou-In-MAM.patt",
-        src:"images/MAM-ThankYou-01.png",
+        src:"images/MAM-ThankYou-02.png",
         position:"-1 0 0",
         rotation:"-90 0 0"
 
@@ -41,8 +41,8 @@ AFRAME.registerComponent('markers_start',{
             var imgEl = document.createElement('a-image');
 			
 			imgEl.setAttribute('src',e.src);
-			imgEl.setAttribute('width',5);
-			imgEl.setAttribute('height',5);
+			imgEl.setAttribute('width',8);
+			imgEl.setAttribute('height',8);
 			imgEl.object3D.position.set(0, 0, 0);
 			imgEl.object3D.rotation.set(-90, 0, 0);
 
