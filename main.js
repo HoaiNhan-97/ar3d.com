@@ -17,7 +17,7 @@ let data =[
 	,
     {
         pattern: "pattern/pattern-ThankYou-In-MAM.patt",
-        src:"images/MAM-ThankYou-02.png",
+        src:"images/MAM-ThankYou-01.png",
         position:"-1 0 0",
         rotation:"-90 0 0"
 
