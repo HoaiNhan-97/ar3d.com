@@ -47,7 +47,7 @@
 </head>
 
 <body>
-
+    <div id="map"></div>
     <body style="margin: -4.375px 0px 0px; overflow: hidden; width: 837px; height: 627.75px;">
         <a-scene vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true"
   embedded arjs='debugUIEnabled: false; sourceType: webcam; trackingMethod: best;'>
@@ -157,8 +157,10 @@
        </a-marker>
 
        <a-marker type='pattern' url='pattern/pattern-AR-SYS5-100.patt'>
-        <a-image position="0 0 0" rotation="-90 0 0" src="images/MAM-ThankYou-01.png" ></a-image>
-        <!-- <a-image position="0 0 0" rotation="-90 0 0" material="shader:gif;src:url(images/test.gif);color:#ffff;repeat:none;" ></a-image> -->
+        <!-- <a-image position="0 0 0" rotation="-90 0 0" src="images/MAM-ThankYou-01.png" ></a-image> -->
+        <!-- <a-image position="0 0 0" rotation="-90 0 0" material="src:url(images/Test AR.jpg);color:#ffff;repeat:none;" ></a-image> -->
+        <!-- <a-entity position="0 0 0" rotation="-90 0 0" geometry="primitive: plane" material=" src:url(images/Test AR.jpg);" width="5" height="5"></a-entity> -->
+        <a-box id="sphere" position='0 0 0' material='color:white'></a-box>
        </a-marker>
 
        <a-marker type='pattern' url='pattern/pattern-AR-SYS6-100.patt'>
@@ -184,10 +186,13 @@
        <!-- thank you -->
 
        <a-marker type='pattern' url='pattern/pattern-ThankYou-In-MAM 2.patt'>
-        <a-image position="0 0 0" rotation="-90 0 0"  material="src:url(images/MAM-ThankYou-01.png);color:#ffff;repeat:none;"></a-image>
+        <!-- <a-image position="0 0 0" rotation="-90 0 0"  material="src:url(images/MAM-ThankYou-01.png);color:#ffff;repeat:none;"></a-image> -->
+        <a-plane id="thankyou" position="0 0 0" rotation="-90 0 0" height="2" width="2" ></a-plane>
        </a-marker>
 
 	</a-scene>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js"></script>
+    <script src="./main.js"></script>
     </body>
 
 
